@@ -58,6 +58,13 @@ public class Controlador extends HttpServlet {
                     empleadoDAO.agregar(empleado);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=listar").forward(request, response);
                     break;
+                case "eliminar":
+                    int id = 0;
+                    empleadoDAO.eliminar(id);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=listar").forward(request, response);
+                    break;
+                    
+                
             }
             
             

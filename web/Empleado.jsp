@@ -19,23 +19,23 @@
                 <div class="card-body">
                     <form action="Controlador?menu=Empleado" method="POST">
                         <div class="form-group">
-                            <label>DPI:</label>
+                            <label class="font-weight-bold" >DPI:</label>
                             <input type="text" name="txtDPIEmpleado" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Nombre:</label>
+                            <label class="font-weight-bold" >Nombre:</label>
                             <input type="text" name="txtNombreEmpleado" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Teléfono</label>
+                            <label class="font-weight-bold" >Teléfono</label>
                             <input type="text" name="txtTelefonoEmpleado" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Estado:</label>
+                            <label class="font-weight-bold" >Estado:</label>
                             <input type="text" name="txtEstado" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Usuario:</label>
+                            <label class="font-weight-bold" >Usuario:</label>
                             <input type="text" name="txtUsuario" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
@@ -44,16 +44,16 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-hover table-bordered"> <!– table-bordered es para que se vea resaltada la tabla –>
                     <thead>
                         <tr>
-                            <td>CÓDIGO</td>
-                            <td>DPI</td>
-                            <td>NOMBRES</td>
-                            <td>TELÉFONO</td>
-                            <td>ESTADO</td>
-                            <td>USUARIO</td>
-                            <td>ACCIONES</td>
+                            <td class="font-weight-bold" >CÓDIGO</td>
+                            <td class="font-weight-bold" >DPI</td>
+                            <td class="font-weight-bold" >NOMBRES</td>
+                            <td class="font-weight-bold" >TELÉFONO</td>
+                            <td class="font-weight-bold" >ESTADO</td>
+                            <td class="font-weight-bold" >USUARIO</td>
+                            <td class="font-weight-bold" >ACCIONES</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -70,7 +70,7 @@
                                 <a class="btn btn-danger" href="">Eliminar</a>
                             </td>
                         </tr>
-                        </c:forEach>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
