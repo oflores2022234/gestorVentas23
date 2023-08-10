@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover table-bordered"> <!– table-bordered es para que se vea resaltada la tabla –>
+                <table class="table table-hover "> <!– table-bordered es para que se vea resaltada la tabla –>
                     <thead>
                         <tr>
                             <td class="font-weight-bold" >CÓDIGO</td>
