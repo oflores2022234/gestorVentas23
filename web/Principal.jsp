@@ -13,7 +13,7 @@
             <title>Menú Principal</title>
         </head>
         <body> 
-            <nav class="navbar navbar-expand-lg nvbar-light bg-success">
+            <nav class="navbar navbar-expand-lg nvbar-light bg-info">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav">
                     <li class="nav-item active">

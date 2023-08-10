@@ -22,6 +22,8 @@ import modelo.EmpleadoDAO;
 public class Controlador extends HttpServlet {
     Empleado empleado = new Empleado();
     EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+    
+    int codEmpleado;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,7 +44,7 @@ public class Controlador extends HttpServlet {
             switch(accion){
                 case "listar":
                     List listaEmpleado = empleadoDAO.listar();
-                    request.setAttribute("empleado", listaEmpleado);
+                    request.setAttribute("empleados", listaEmpleado);
                     break;
                 case "Agregar":
                     String DPI = request.getParameter("txtDPIEmpleado");
@@ -58,12 +60,16 @@ public class Controlador extends HttpServlet {
                     empleadoDAO.agregar(empleado);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=listar").forward(request, response);
                     break;
-                case "eliminar":
-                    int id = 0;
-                    empleadoDAO.eliminar(id);
+                case "Eliminar":
+                    break;
+                case "Editar":
+                    codEmpleado = Integer.parseInt(request.getParameter("codigoEmpleado"));
+                    Empleado e = empleadoDAO.listarCodigoEmpleado(codEmpleado);
+                    request.setAttribute("empleado", e);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=listar").forward(request, response);
                     break;
-                    
+                case "Actualizar":
+                    break;
                 
             }
             
