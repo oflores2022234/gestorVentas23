@@ -66,7 +66,7 @@
                             <td>${empleado.getEstado()}</td>
                             <td>${empleado.getUsuario()}</td>
                             <td>
-                                <a class="btn btn-warning" href="Controlador?menu=Empleado&Editar&codigoEmpleado=${empleado.getCodigoEmpleado()}">Editar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&codigoEmpleado=${empleado.getCodigoEmpleado()}">Editar</a>
                                 <a class="btn btn-danger" href="">Eliminar</a>
                             </td>
                         </tr>
