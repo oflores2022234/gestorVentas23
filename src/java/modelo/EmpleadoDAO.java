@@ -102,19 +102,16 @@ public class EmpleadoDAO {
                 emp.setNombresEmpleado(rs.getString(3));
                 emp.setTelefonoEmpleado(rs.getString(4));
                 emp.setEstado(rs.getString(5));
-                emp.setUsuario(rs.getString(6));
-                
+                emp.setUsuario(rs.getString(6));   
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
         return emp;
     }
     
     
     // MÉTODO EDITAR
-    
     public int actualizar(Empleado emp){
         String sql = "update empleado set DPIEmpleado = ?, nombresEmpleado = ?, telefonoEmpleado = ?, estado = ?, usuario = ? where codigoEmpleado = ?";
         try {
