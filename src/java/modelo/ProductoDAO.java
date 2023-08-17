@@ -50,7 +50,6 @@ public class ProductoDAO {
     
         public int agregar(Producto pr){
             String sql = "insert into Producto (nombreProducto, precio, stock, estado) values(?,?,?,?);";
-            System.out.println("alv");
             try{
                 
                 con = cn.Conexion();
