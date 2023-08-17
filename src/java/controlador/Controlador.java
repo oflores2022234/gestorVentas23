@@ -129,6 +129,9 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=listar").forward(request, response);
                     break;
                 case "Eliminar":
+                    int codigoPro = Integer.parseInt(request.getParameter("codigoProducto"));
+                    productoDAO.eliminar(codigoPro);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=listar").forward(request, response);
                     break;
                 case "Editar":
                     codProducto = Integer.parseInt(request.getParameter("codigoProducto"));
@@ -174,6 +177,10 @@ public class Controlador extends HttpServlet {
                         request.getRequestDispatcher("Controlador?menu=Clientes&accion=listar").forward(request, response);
                         break;
                     case "Eliminar":
+                        
+                        int codigoClien = Integer.parseInt(request.getParameter("codigoCliente"));
+                        clienteDAO.eliminar(codigoClien);
+                        request.getRequestDispatcher("Controlador?menu=Clientes&accion=listar").forward(request, response);
                         break;
                     case "Editar":
                         codCliente = Integer.parseInt(request.getParameter("codigoCliente"));

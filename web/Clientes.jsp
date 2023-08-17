@@ -62,7 +62,7 @@
                             <td>${cliente.getEstado()}</td>
                             <td>
                                 <a class="btn btn-warning" href="Controlador?menu=Clientes&accion=Editar&codigoCliente=${cliente.getCodigoCliente()}">Editar</a>
-                                <a class="btn btn-danger" href="Eliminar">Eliminar</a>
+                                <a class="btn btn-danger" onclick="return confirm('¿Quiere eliminar este registro?')" href="Controlador?menu=Clientes&accion=Eliminar&codigoCliente=${cliente.getCodigoCliente()}" >Eliminar</a>
                             </td>
                         </tr>
                         </c:forEach>
