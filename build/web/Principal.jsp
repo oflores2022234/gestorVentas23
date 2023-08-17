@@ -39,7 +39,7 @@
                       </button>
                     <div class="dropdown-menu text-center" aria-labellebdy="dropdownMenuButton">
                         <a class="dropdown-item" href="#">
-                            <img src="img/usuario.png" alt="" width="50"/>
+                            <img src="img/programador.png" alt="" width="50"/>
                         </a>
                         <a class="dropdown-item" href="#">${usuario.getUsuario()}</a>
                         <a class="dropdown-item" href="#">oflores-2022234@kinal.edu.gt</a>

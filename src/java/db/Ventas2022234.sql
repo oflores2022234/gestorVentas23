@@ -86,3 +86,7 @@ insert into Producto (nombreProducto, precio, stock, estado) values('Monitor Hai
 select * from Producto;
 
 select * from Empleado where usuario = 'oflores' and DPIEmpleado = '123';
+
+select * from Empleado;
+
+
