@@ -13,75 +13,113 @@
         <title>Ventas</title>
     </head>
     <body>
+        
         <div class="d-flex">
-            <div class="card col-sm-4">
-                <div class="card-body">
-                    <form action="Controlador?menu=Empleado" method="POST">
-                        <div class="form-group">
-                            <label>Número de Serie</label>
-                            <input type="text" value="${venta.getNumeroSerie()}" name="txtNumeroSerie" class="form-control">
+            <div class="col-sm-4">
+                <div class="card">
+                    <form>
+                        <div clas="card-body">
+                            <!-- FORMULARIO CLIENTE-->
+                            
+                            <div class="form-group">
+                                <label>Datos del Cliente:</label>
+                            </div>
+                            <div class="form-group d-flex">
+                                <div class="col-sm-6 d-flex">
+                                    <input type="text" name="txtCodigoCliente" value="" class="form-control" placeholder="Codigo">
+                                    <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" name="txtNombreCliente" value="" class="form-control">
+                                </div>
+                            </div>
+                                <!-- FORMULARIO PRODUCTO -->
+                                <div class="form-group">
+                                    <label>Datos Producto:</label>
+                                </div>
+                                <div class="form-group d-flex">
+                                    <div class="col-sm-6 d-flex">
+                                        <input type="text" name="txtCodigoProducto" value="" class="form-control" placeholder="Producto">
+                                        <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <input type="text" name="txtNombreProducto" value="" class="form-control" placeholder="Producto">
+                                    </div>
+                                </div>
+                                <div class="form-group d-flex">
+                                    <div class="col-sm-6 d-flex">
+                                        <input type="text" name="txtPrecio" value="" class="form-control" placeholder="Q.00.00">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="txtCantidad" value="1" class="form-control">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="txtStock" value="" class="form-control" placeholder="Stock">
+                                    </div>
+                                </div>
+                                <!-- AGREGAR REGISTRO-->
+                                <div class="form-group">
+                                    <div>
+                                        <button type="submit" name="accion" value="Agregar" class="btn btn-outline-info">Agregar Producto</button>
+                                    </div>
+                                </div>
                         </div>
-                        <div class="form-group">
-                            <label>Fecha</label>
-                            <input type="text" value="${empleado.getFechaVenta()}" name="txtFechaVenta" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Monto</label>
-                            <input type="text" value="${empleado.getMonto()}" name="txtMonto" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Estado</label>
-                            <input type="text" value="${empleado.getEstado()}" name="txtEstado" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Código Cliente</label>
-                            <input type="text" value="${empleado.getCodigoCliente()}" name="txtCódigoCliente" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Código Cliente</label>
-                            <input type="text" value="${empleado.getCodigoEmpleado()}" name="getCódigoEmpleado" class="form-control">
-                        </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info" href="Controlador?menu=RegistrarVenta&accion=Agregar">
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success" href="">
                     </form>
                 </div>
             </div>
-            <div class="col-sm-8">
-                <table class="table table-hober">
-                    <thead>
-                        <tr>
-                            <td>Código Venta</td>
-                            <td>Número de Serie</td>
-                            <td>Fecha</td>
-                            <td>Monto</td>
-                            <td>Estado</td>
-                            <td>Código Cliente</td>
-                            <td>Código Empleado</td>
-                            <td>Acciones</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach var="venta" items="${ventas}">
-                        <tr>
-                            <td>${venta.getCodigoVenta()}</td>
-                            <td>${venta.getNumeroSerie()}</td>
-                            <td>${venta.getFechaVenta()}</td>
-                            <td>${venta.getMonto()}</td>
-                            <td>${venta.getEstado()}</td>
-                            <td>${venta.getCodigoCliente()}</td>
-                            <td>${venta.getCodigoEmpleado()}</td>
-                            
-                            <td>
-                                <a class="btn btn-warning" href="Controlador?menu=RegistrarVenta&accion=Editar&codigoVenta=${venta.getCodigoVenta()}">Editar</a>
-                                <a class="btn btn-danger" href="Eliminar">Eliminar</a>
-                            </td>
-                        </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
-            </div>            
+            <div class="col-sm-7">
+                <div class="card">
+                <div class="card-body">
+                    <div class="d-flex col-sm-6 ml-auto">
+                        <label>Serie No.</label>
+                        <input type="text" name="txtNumSerie" class="form-control"><br>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>NUMERO</th>
+                                <th>CODIGO</th>
+                                <th>DESCRIPCION</th>
+                                <th>PRECIO</th>
+                                <th>CANTIDAD</th>
+                                <th>SUB-TOTAL</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="d-flex">
+                                    <a href="#" class="btn btn-warning">Editar</a>
+                                    <a href="#" class="btn btn-danger" style="margin-left: 10px">Eliminar</a>
+                                </td>
+                                    
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                    
+                    <div class="card-footer d-flex">
+                        <div class="col-sm-6">
+                            <input type="submit" name="accion" value="Generar Venta" class="btn btn-success">
+                            <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
+                        </div>
+                        <div class="col-sm-4 ml-auto">
+                            <input type="text" name="txtTotal" value="" class="form-control">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
         </div>
-
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
