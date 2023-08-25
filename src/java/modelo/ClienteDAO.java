@@ -90,6 +90,36 @@ public class ClienteDAO {
             }
             return cl;
         }
+        
+        //buscar por dpi
+        
+        public Cliente buscarCliente(int id){
+            // Instanciar objeto a devolver
+            Cliente cl = new Cliente();
+            String sql = "select * from cliente where codigoCliente = "+id;
+            try{
+                con = cn.Conexion();
+                ps = con.prepareStatement(sql);
+                
+                rs = ps.executeQuery();
+                
+                while(rs.next()){
+                    cl.setCodigoCliente(rs.getInt(1));//rs.getInt(1)
+                    cl.setDPICliente(rs.getString(2));//rs.getString(2)
+                    cl.setNombresCliente(rs.getString(3));
+                    cl.setDireccionCliente(rs.getString(4));
+                    cl.setEstado(rs.getString(5));
+                    
+                    
+                }
+                
+            }catch(Exception e){
+                e.printStackTrace();
+                System.out.println("No se pudo encontrar el cliente");
+                
+            }
+            return cl;
+        }
     
         
         public int actualizar(Cliente cl){

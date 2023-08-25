@@ -8,6 +8,7 @@ package controlador;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,7 @@ import modelo.Empleado;
 import modelo.EmpleadoDAO;
 import modelo.ProductoDAO;
 import modelo.Producto;
+import modelo.Venta;
 
 /**
  *
@@ -34,6 +36,14 @@ public class Controlador extends HttpServlet {
     
     EmpleadoDAO empleadoDAO = new EmpleadoDAO();
     ClienteDAO clienteDAO = new ClienteDAO();
+    
+    Venta venta = new Venta();
+    List<Venta> lista = new ArrayList<>();
+    int item = 0;
+    int codPro, cantid;
+    String descripcion;
+    Double precio,subtotal;
+    Double totalPagar;
     
     int codEmpleado;
     int codCliente;
@@ -207,7 +217,22 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("Clientes.jsp").forward(request, response);
             
         }else if(menu.equals("RegistrarVenta")){
-            request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
+            
+            switch(accion){
+                case "BuscarCliente":
+                    int id = Integer.parseInt(request.getParameter("txtCodigoCliente"));
+                    cliente.setCodigoCliente(id);
+                    cliente = clienteDAO.buscarCliente(id);
+                    request.setAttribute("cliente", cliente);
+                break;
+                case "BuscarProducto":
+                    int id2 = Integer.parseInt(request.getParameter("txtCodigoProducto"));
+                    producto = productoDAO.buscarProducto(id2);
+                    request.setAttribute("producto", producto);
+                    break;
+            }
+                    
+             request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);       
         }else if(menu.equals("Home")){
             request.getRequestDispatcher("Home.jsp").forward(request, response);
         }else if(menu.equals("Carrito")){

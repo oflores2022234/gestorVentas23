@@ -92,6 +92,33 @@ public class ProductoDAO {
             }
             return pr;
         }
+        
+        //buscar por id
+        public Producto buscarProducto(int id){
+            // Instanciar objeto a devolver
+            Producto pr = new Producto();
+            String sql = "select * from producto where codigoProducto = "+id;
+            try{
+                con = cn.Conexion();
+                ps = con.prepareStatement(sql);
+                rs = ps.executeQuery();
+                
+                while(rs.next()){
+                    pr.setCodigoProducto(rs.getInt(1));//rs.getInt(1)
+                    pr.setNombreProducto(rs.getString(2));//rs.getString(2)
+                    pr.setPrecio(rs.getDouble(3));
+                    pr.setStock(rs.getInt(4));
+                    pr.setEstado(rs.getString(5));
+                    
+                    
+                }
+                
+            }catch(Exception e){
+                e.printStackTrace();
+                System.out.println("hi");
+            }
+            return pr;
+        }
     
         
         public int actualizar(Producto pr){

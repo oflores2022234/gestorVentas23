@@ -18,7 +18,7 @@
         <div class="d-flex">
             <div class="col-sm-4">
                 <div class="card">
-                    <form>
+                    <form action="Controlador?menu=RegistrarVenta" method="POST">
                         <div clas="card-body">
                             <!-- FORMULARIO CLIENTE-->
 
@@ -27,11 +27,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="txtCodigoCliente" value="" class="form-control" placeholder="Codigo">
+                                    <input type="text" name="txtCodigoCliente" value="${cliente.getCodigoCliente()}" class="form-control" placeholder="Codigo">
                                     <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="txtNombreCliente" value="" class="form-control">
+                                    <input type="text" name="txtNombreCliente" value="${cliente.getNombresCliente()}" class="form-control">
                                 </div>
                             </div>
                             <!-- FORMULARIO PRODUCTO -->
@@ -40,11 +40,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="txtCodigoProducto" value="" class="form-control" placeholder="Producto">
+                                    <input type="text" name="txtCodigoProducto" value="${producto.getCodigoProducto()}" class="form-control" placeholder="Producto">
                                     <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="txtNombreProducto" value="" class="form-control" placeholder="Producto">
+                                    <input type="text" name="txtNombreProducto" value="${producto.getNombreProducto()}" class="form-control" placeholder="Producto">
                                 </div>
                             </div>
                             <div class="form-group d-flex">
