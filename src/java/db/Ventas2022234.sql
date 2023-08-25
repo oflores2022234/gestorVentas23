@@ -19,7 +19,7 @@ Create table Empleado(
     nombresEmpleado varchar(200) not null,
     telefonoEmpleado varchar(8) not null,
     estado varchar(1) not null,
-    usuario varchar(15) not null,
+    usuario varchar(30) not null,
     primary key PK_codigoEmpleado (codigoEmpleado)
 );
 
@@ -69,9 +69,9 @@ insert into Cliente (DPICliente, nombresCliente, direccionCliente, estado) value
 
  
 
-insert into Empleado (DPIEmpleado, nombresEmpleado, telefonoEmpleado, estado, usuario) values ('123', 'Oscar Alejandro Flores Yllescas', '42363512','1', 'oflores');
-insert into Empleado (DPIEmpleado, nombresEmpleado, telefonoEmpleado, estado, usuario) values ('1579457820107', 'Rony Godinez', '43210509','1', 'rgod15');
-insert into Empleado (DPIEmpleado, nombresEmpleado, telefonoEmpleado, estado, usuario) values ('1579558740106', 'Palermo Suarez', '24587963','1', 'psuarez25');
+insert into Empleado (DPIEmpleado, nombresEmpleado, telefonoEmpleado, estado, usuario) values ('123', 'Oscar Alejandro Flores Yllescas', '42363512','1', 'oFlores-2022234');
+insert into Empleado (DPIEmpleado, nombresEmpleado, telefonoEmpleado, estado, usuario) values ('111', 'Josue Sebastian Ambrocio Alvarado', '43210509','1', 'jAmbrocio-2022262');
+insert into Empleado (DPIEmpleado, nombresEmpleado, telefonoEmpleado, estado, usuario) values ('222', 'José Rodrigo Chanquín Mac', '24587963','1', 'jChanquin-2022200');
 insert into Empleado (DPIEmpleado, nombresEmpleado, telefonoEmpleado, estado, usuario) values ('1579663520108', 'Luisa Aragon', '36251478','1', 'laragon40');
 
  

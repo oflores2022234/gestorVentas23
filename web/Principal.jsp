@@ -40,11 +40,7 @@
                     <img src="img/compras.png" alt="60" width="60"/><br>
                 </button>
                 <div class="dropdown-menu text-center" aria-labellebdy="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Carrito de Compras</a>
-                    <div class="dropdown-divider"></div>
-                    <form action="Validar" method="POST">
-                        <button name="accion" name="Salir" class="dropdown-item" href="#">Cerar</button>
-                    </form>
+                    <a class="dropdown-item" href="Controlador?menu=Carrito" target="myFrame">Carrito de Compras</a>
                 </div>
             </div> 
             
@@ -59,7 +55,7 @@
                         <img src="img/programador.png" alt="" width="50"/>
                     </a>
                     <a class="dropdown-item" href="#">${usuario.getUsuario()}</a>
-                    <a class="dropdown-item" href="#">oflores-2022234@kinal.edu.gt</a>
+                    <a class="dropdown-item" href="#">${usuario.getUsuario()}@kinal.edu.gt</a>
                     <div class="dropdown-divider"></div>
                     <form action="Validar" method="POST">
                         <button name="accion" name="Salir" class="dropdown-item" href="#">Salir</button>
