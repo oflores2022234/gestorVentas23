@@ -20,7 +20,7 @@
                         <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Home" target="myFrame">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Producto&accion=listar" target="myFrame">Producto</a>
+                        <a style="margin-left:  10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Producto&accion=listar" target="myFrame">Producto</a>
                     </li>
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Empleado&accion=listar" target="myFrame">Empleado</a>
@@ -63,12 +63,7 @@
                 </div>
             </div>
                    
-            <!--<div class="container mt-4 col-lg-1 d-flex">
-                <div class="form-group text-right">
-                    <img src="img/carrito.png" alt="60" width="60"/><br>
-                </div>
-            </div>
-            -->
+    
         </nav>          
         <div class="m-4" style="height: 646px">
             <iframe name="myFrame" style="height: 100%; width: 100%; border: none"></iframe>
