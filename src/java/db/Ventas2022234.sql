@@ -88,5 +88,6 @@ select * from Producto;
 select * from Empleado where usuario = 'oflores' and DPIEmpleado = '123';
 
 select * from Empleado;
+select * from Cliente;
 
 

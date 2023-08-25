@@ -4,6 +4,7 @@
     Author     : informatica
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,7 +28,7 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="txtCodigoCliente" value="${cliente.getCodigoCliente()}" class="form-control" placeholder="Codigo">
+                                    <input type="text" name="txtCodigoCliente" value="${cliente.getDPICliente()}" class="form-control" placeholder="Codigo">
                                     <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">
                                 </div>
                                 <div class="col-sm-6">
@@ -49,13 +50,13 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="txtPrecio" value="" class="form-control" placeholder="Q.00.00">
+                                    <input type="text" name="txtPrecio" value="${producto.getPrecio()}" class="form-control" placeholder="Q.00.00">
                                 </div>
                                 <div class="col-sm-3">
                                     <input type="text" name="txtCantidad" value="1" class="form-control">
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" name="txtStock" value="" class="form-control" placeholder="Stock">
+                                    <input type="text" name="txtStock" value="${producto.getStock()}" class="form-control" placeholder="Stock">
                                 </div>
                             </div>
                             <!-- AGREGAR REGISTRO-->
@@ -88,19 +89,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <c:forEach var="list" items="${lista}">
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>${list.getItem()}</td>
+                                    <td>${list.getCodigoVenta()}</td>
+                                    <td>${list.getDescripcionProd()}</td>
+                                    <td>${list.getPrecio()}</td>
+                                    <td>${list.getCantidad()}</td>
+                                    <td>${list.getSubTotal()}</td>
                                     <td class="d-flex">
                                         <a href="#" class="btn btn-warning">Editar</a>
                                         <a href="#" class="btn btn-danger" style="margin-left: 10px">Eliminar</a>
                                     </td>
-
                                 </tr>
+                            </c:forEach>  
                             </tbody>
                         </table>
                     </div>
@@ -111,7 +113,7 @@
                             <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
                         </div>
                         <div class="col-sm-4 ml-auto">
-                            <input type="text" name="txtTotal" value="" class="form-control">
+                            <input type="text" name="txtTotal" value="Q${totalPagar}0" class="form-control">
                         </div>
                     </div>
 

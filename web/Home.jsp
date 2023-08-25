@@ -21,7 +21,7 @@
 
                         <div class="form-group text-center">
                             <h3>Gestor Ventas</h3>
-                            <img src="img/programador.png" alt="80" width="100"/><br>
+                            <img src="img/oFlores-2022234.png" alt="80" width="100"/><br>
                             <h5>Oscar Alejandro Flores Yllescas</h5>
                         </div>
                         <div class="form-group text-center">

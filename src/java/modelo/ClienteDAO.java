@@ -120,6 +120,8 @@ public class ClienteDAO {
             }
             return cl;
         }
+        
+        // ----------------------------------------------------
     
         
         public int actualizar(Cliente cl){
