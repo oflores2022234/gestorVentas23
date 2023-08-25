@@ -13,7 +13,7 @@
         <title>Ventas</title>
     </head>
     <body>
-        
+
 
         <div class="d-flex">
             <div class="col-sm-4">

@@ -60,6 +60,7 @@
                             <td>${producto.getStock()}</td>
                             <td>${producto.getEstado()}</td>
                             <td>
+                                <a class="btn btn-success" href="#=${producto.getCodigoProducto()}">Agregar Carrito</a>
                                 <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Editar&codigoProducto=${producto.getCodigoProducto()}">Editar</a>
                                 <a class="btn btn-danger" onclick="return confirm('¿Quiere eliminar este registro?')" href="Controlador?menu=Producto&accion=Eliminar&codigoProducto=${producto.getCodigoProducto()}" >Eliminar</a>
                             </td>
