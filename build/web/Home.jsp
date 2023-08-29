@@ -17,7 +17,7 @@
         <div class="container mt-6 ">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="card col-sm-10 bg-info" class="radius:500px">
+                    <div class="card col-sm-10 bg-info">
 
                         <div class="form-group text-center">
                             <h3>Gestor Ventas</h3>
