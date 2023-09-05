@@ -3,8 +3,8 @@
     Created on : 24/08/2023, 09:13:22 PM
     Author     : A_flo
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="modelo.Empleado" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,8 +21,9 @@
 
                         <div class="form-group text-center">
                             <h3>Gestor Ventas</h3>
-                            <img src="img/oFlores-2022234.png" alt="80" width="100"/><br>
-                            <h5>Oscar Alejandro Flores Yllescas</h5>
+                            <img src="img/<%= ((Empleado)session.getAttribute("usuario")).getUsuario() %>.png" alt="80" width="100"/><br>
+                            <!-- <h5>Oscar Alejandro Flores Yllescas</h5>-->
+                            <h5>Bienvenido, <%= ((Empleado)session.getAttribute("usuario")).getUsuario() %>!</h5>
                         </div>
                         <div class="form-group text-center">
                             <h5>Carné: 2022234</h5>

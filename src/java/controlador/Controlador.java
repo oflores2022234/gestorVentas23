@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
 import modelo.ClienteDAO;
@@ -260,8 +261,14 @@ public class Controlador extends HttpServlet {
 
             request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
         } else if (menu.equals("Home")) {
+            List<Empleado> listaEmpleados = empleadoDAO.listar();
+            if (!listaEmpleados.isEmpty()) {
+                Empleado empleado = listaEmpleados.get(1);
+                HttpSession session = request.getSession();
+                session.setAttribute("usuario", empleado);
+            }
             request.getRequestDispatcher("Home.jsp").forward(request, response);
-        } else if (menu.equals("Carrito")) {
+        }else if (menu.equals("Carrito")) {
             request.getRequestDispatcher("Carrito.jsp").forward(request, response);
         }
 
