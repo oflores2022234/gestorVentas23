@@ -4,6 +4,7 @@
     Author     : A_flo
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,45 +14,61 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>CÓDIGO</th>
-                                    <th>NOMBRE</th>
-                                    <th>PRECIO UNITARIO</th>
-                                    <th>STOCK</th>
-                                    <th>ESTADO</th>
-                                    <th>SUB-TOTAL</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="d-flex">
-                                        <input type="text" size="40" style="width:200px">
-                                    </td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="card-footer d-flex">
-                        <div class="col-sm-4 ml-auto">
-                            <span>TOTAL</span>
-                            <input type="text" size="40" style="width:200px" name="txtTotal" value="" class="form-control">
+        
+        
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-sm-8">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ITEM</th>
+                                <th>NOMBRES</th>
+                                <th>PRECIO</th>
+                                <th>CANTIDAD</th>
+                                <th>SUBTOTAL</th>
+                                <th>ACCION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var="car" items="${carrito}">
+                            <tr>
+                                <td>${car.getItem()}</td>
+                                <td>${car.getNombreProducto()}</td>
+                                <td>${car.getPrecio()}</td>
+                                <td>${car.getCantidad()}</td>
+                                <td>${car.getSubTotal()}</td>
+                                <td>
+                                    <a href="#">Eliminar</a>
+                                    <a href="#">Editar</a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Generar Compra</h3>
+                        </div>
+                        <div class="card-body">
+                            <label>Subtotal:</label>
+                            <input type="text" readonly="" class="form-control">
+                            <label>Descuento:</label>
+                            <input type="text" readonly="" class="form-control">
+                            <label>Total Pagar:</label>
+                            <input type="text" readonly="" class="form-control">
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-info btn-block">Realizar Pago</a>
+                            <a href="#" class="btn btn-info btn-block">Generar Compra</a>
                         </div>
                     </div>
-
                 </div>
             </div>
+        </div>
+        
         
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

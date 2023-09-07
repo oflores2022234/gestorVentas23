@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
+import modelo.Carrito;
 import modelo.Cliente;
 import modelo.ClienteDAO;
 import modelo.Empleado;
@@ -41,11 +42,19 @@ public class Controlador extends HttpServlet {
 
     Venta venta = new Venta();
     List<Venta> lista = new ArrayList<>();
+    
+    
+    List<Carrito> listaCarrito = new ArrayList<>();
+    
+    int it;
+    double totalPagar= 0.0;
+    int cantidad;
+    
     int item = 0;
     int codPro, cantid;
     String descripcion;
     Double precio, subTotal;
-    Double totalPagar;
+    
 
     int codEmpleado;
     int codCliente;
@@ -162,6 +171,21 @@ public class Controlador extends HttpServlet {
                     producto.setEstado(estProducto);
                     producto.setCodigoProducto(codProducto);
                     productoDAO.actualizar(producto);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=listar").forward(request, response);
+                    break;
+                case "AgregarCarrito":
+                    codProducto = Integer.parseInt(request.getParameter("codigoProducto"));
+                    producto = productoDAO.listarCodigoProducto(codProducto);
+                    item = item+1;
+                    Carrito car=new Carrito();
+                    car.setItem(item);
+                    car.setCodigoProducto(producto.getCodigoProducto());
+                    car.setNombreProducto(producto.getNombreProducto());
+                    car.setPrecio(producto.getPrecio());
+                    car.setCantidad(cantidad);
+                    car.setSubTotal(cantidad*producto.getPrecio());
+                    listaCarrito.add(car);
+                    request.setAttribute("contador", listaCarrito.size());
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=listar").forward(request, response);
                     break;
             }

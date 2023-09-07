@@ -31,10 +31,13 @@
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistrarVenta&accion=default" target="myFrame">Registrar Venta</a>
                     </li>
+                    <li>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Carrito" target="myFrame"><i>(<label style="color: darkorange">${contador}</label>)</i>Carrito</a>
+                    </li>
                 </ul>
             </div>
             
-            <!-- Carrito Compras-->
+            <!-- Carrito Compras
             <div class="dropdown">
                 <button  style="border: none" class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="img/compras.png" alt="60" width="60"/><br>
@@ -43,6 +46,7 @@
                     <a class="dropdown-item" href="Controlador?menu=Carrito" target="myFrame">Carrito de Compras</a>
                 </div>
             </div> 
+            -->
             
             <!--Login-->        
                     
